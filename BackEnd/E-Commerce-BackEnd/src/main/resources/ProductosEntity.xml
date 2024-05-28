@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="ECommerceBackEnd.entities.ProductosEntity">
+        <table name="productos" schema="e-commerce" catalog=""/>
+        <attributes>
+            <id name="idProducto">
+                <column name="IdProducto" precision="-1"/>
+            </id>
+            <basic name="idCategoria">
+                <column name="IdCategoria" precision="-1"/>
+            </basic>
+            <basic name="producto">
+                <column name="Producto"/>
+            </basic>
+            <basic name="descripcion">
+                <column name="Descripcion"/>
+            </basic>
+            <basic name="marca">
+                <column name="Marca"/>
+            </basic>
+            <basic name="imgUrl">
+                <column name="ImgUrl"/>
+            </basic>
+            <basic name="precio">
+                <column name="Precio" precision="-1"/>
+            </basic>
+            <basic name="idComentario">
+                <column name="IdComentario" nullable="false" precision="-1"/>
+            </basic>
+            <many-to-one name="categoriaByIdCategoria" optional="true"
+                         target-entity="ECommerceBackEnd.entities.CategoriaEntity">
+                <join-column name="IdCategoria" referenced-column-name="IdCategoria"/>
+            </many-to-one>
+            <many-to-one name="comentariosByIdComentario" optional="true"
+                         target-entity="ECommerceBackEnd.entities.ComentariosEntity">
+                <join-column name="IdComentario" nullable="false" referenced-column-name="IdComentarios"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

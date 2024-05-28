@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="ECommerceBackEnd.entities.ComentariosEntity">
+        <table name="comentarios" schema="e-commerce" catalog=""/>
+        <attributes>
+            <id name="idComentarios">
+                <column name="IdComentarios" precision="-1"/>
+            </id>
+            <basic name="idProducto">
+                <column name="IdProducto" precision="-1"/>
+            </basic>
+            <basic name="comentario">
+                <column name="Comentario"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
