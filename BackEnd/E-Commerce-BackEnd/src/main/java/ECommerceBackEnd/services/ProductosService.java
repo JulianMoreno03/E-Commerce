@@ -19,6 +19,9 @@ public class ProductosService {
         return (ArrayList<ProductosEntity>) productoRepository.findAll();
     }
 
+    public ProductosEntity BuscarProductoPorId(int id){
+        return productoRepository.findById(id);
+    }
 
     //Para guardar un producto
     public ProductosEntity GuardarProducto(ProductosEntity producto){

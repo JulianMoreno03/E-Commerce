@@ -15,6 +15,19 @@ public class ProductosEntity {
     private int idCategoria;
 
     @Basic
+    @Column(name = "producto", nullable = false)
+    private String producto;
+
+    @Basic
+    @Column(name = "descripcion", nullable = false)
+    private String descripcion;
+
+
+
+    @Basic
+    @Column(name = "marca", nullable = false)
+    private String marca;
+    @Basic
     @Column(name = "ImgUrl", nullable = false, length = -1)
     private String imgUrl;
 
@@ -73,20 +86,33 @@ public class ProductosEntity {
     public void setIdComentario(Integer idComentario) {
         this.idComentario = idComentario;
     }
+    public String getProducto() {
+        return producto;
+    }
 
+    public void setProducto(String producto) {
+        this.producto = producto;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
     public CategoriaEntity getCategoriaByIdCategoria() {
         return categoriaByIdCategoria;
     }
 
-    public void setCategoriaByIdCategoria(CategoriaEntity categoriaByIdCategoria) {
-        this.categoriaByIdCategoria = categoriaByIdCategoria;
-    }
 
-    public ComentariosEntity getComentariosByIdComentario() {
-        return comentariosByIdComentario;
-    }
 
-    public void setComentariosByIdComentario(ComentariosEntity comentariosByIdComentario) {
-        this.comentariosByIdComentario = comentariosByIdComentario;
-    }
 }

@@ -33,11 +33,4 @@ public class ComentariosEntity {
         this.idProducto = idProducto;
     }
 
-    public Collection<ProductosEntity> getProductosByIdComentarios() {
-        return productosByIdComentarios;
-    }
-
-    public void setProductosByIdComentarios(Collection<ProductosEntity> productosByIdComentarios) {
-        this.productosByIdComentarios = productosByIdComentarios;
-    }
 }
