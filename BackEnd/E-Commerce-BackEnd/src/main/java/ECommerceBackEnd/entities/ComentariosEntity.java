@@ -2,8 +2,10 @@ package ECommerceBackEnd.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
-@Table(name = "comentarios", schema = "e-commerce")
+@Table(name = "comentarios", schema = "e-commerce", catalog = "")
 public class ComentariosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,9 +14,8 @@ public class ComentariosEntity {
     @Basic
     @Column(name = "IdProducto", nullable = false)
     private int idProducto;
-    @Basic
-    @Column(name = "Comentario", nullable = false, length = -1)
-    private String comentario;
+    @OneToMany(mappedBy = "comentariosByIdComentario")
+    private Collection<ProductosEntity> productosByIdComentarios;
 
     public int getIdComentarios() {
         return idComentarios;
@@ -32,11 +33,11 @@ public class ComentariosEntity {
         this.idProducto = idProducto;
     }
 
-    public String getComentario() {
-        return comentario;
+    public Collection<ProductosEntity> getProductosByIdComentarios() {
+        return productosByIdComentarios;
     }
 
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
+    public void setProductosByIdComentarios(Collection<ProductosEntity> productosByIdComentarios) {
+        this.productosByIdComentarios = productosByIdComentarios;
     }
 }

@@ -9,32 +9,29 @@ public class ProductosEntity {
     @Id
     @Column(name = "IdProducto", nullable = false)
     private int idProducto;
+
     @Basic
-    @Column(name = "IdCategoria", nullable = false)
+    @Column(name = "IdCategoria", nullable = false, insertable = false, updatable = false)
     private int idCategoria;
-    @Basic
-    @Column(name = "Producto", nullable = false, length = -1)
-    private String producto;
-    @Basic
-    @Column(name = "Descripcion", nullable = false, length = -1)
-    private String descripcion;
-    @Basic
-    @Column(name = "Marca", nullable = false, length = -1)
-    private String marca;
+
     @Basic
     @Column(name = "ImgUrl", nullable = false, length = -1)
     private String imgUrl;
+
     @Basic
     @Column(name = "Precio", nullable = false, precision = 0)
     private double precio;
+
     @Basic
-    @Column(name = "IdComentario", nullable = true)
+    @Column(name = "IdComentario", nullable = true, insertable = false, updatable = false)
     private Integer idComentario;
+
     @ManyToOne
-    @JoinColumn(name = "IdCategoria", referencedColumnName = "IdCategoria", nullable = false)
+    @JoinColumn(name = "IdCategoria", referencedColumnName = "IdCategoria", nullable = false, insertable = false, updatable = false)
     private CategoriaEntity categoriaByIdCategoria;
+
     @ManyToOne
-    @JoinColumn(name = "IdComentario", referencedColumnName = "IdComentarios")
+    @JoinColumn(name = "IdComentario", referencedColumnName = "IdComentarios", nullable = true, insertable = false, updatable = false)
     private ComentariosEntity comentariosByIdComentario;
 
     public int getIdProducto() {
@@ -51,30 +48,6 @@ public class ProductosEntity {
 
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
-    }
-
-    public String getProducto() {
-        return producto;
-    }
-
-    public void setProducto(String producto) {
-        this.producto = producto;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getImgUrl() {

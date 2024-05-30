@@ -2,16 +2,21 @@ package ECommerceBackEnd.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Collection;
+
 @Entity
-@Table(name = "categoria", schema = "e-commerce")
+@Table(name = "categoria", schema = "e-commerce", catalog = "")
 public class CategoriaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "IdCategoria", nullable = false)
     private int idCategoria;
+
     @Basic
-    @Column(name = "Categoria", nullable = false, length = -1)
+    @Column(name = "categoria", nullable = false)
     private String categoria;
+    @OneToMany(mappedBy = "categoriaByIdCategoria")
+    private Collection<ProductosEntity> productosByIdCategoria;
 
     public int getIdCategoria() {
         return idCategoria;
