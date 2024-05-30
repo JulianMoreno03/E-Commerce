@@ -14,6 +14,18 @@ public class ComentariosEntity {
     @Basic
     @Column(name = "IdProducto", nullable = false)
     private int idProducto;
+    @Basic
+    @Column(name = "comentario", nullable = false)
+    private String comentario;
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
     @OneToMany(mappedBy = "comentariosByIdComentario")
     private Collection<ProductosEntity> productosByIdComentarios;
 

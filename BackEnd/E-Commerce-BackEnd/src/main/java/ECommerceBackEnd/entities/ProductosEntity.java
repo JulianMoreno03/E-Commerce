@@ -113,6 +113,11 @@ public class ProductosEntity {
         return categoriaByIdCategoria;
     }
 
+    public ComentariosEntity getComentarioByIdComentarios() {
+        return comentariosByIdComentario;
+    }
+
+
 
 
 }
