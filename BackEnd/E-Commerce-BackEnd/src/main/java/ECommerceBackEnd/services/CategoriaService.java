@@ -21,4 +21,9 @@ public class CategoriaService {
     public CategoriaEntity GuardarCategoria(CategoriaEntity categoria){
         return  categoriaRepository.save(categoria);
     }
+
+    public CategoriaEntity BuscarCategoriaPorId(int id){
+        return categoriaRepository.findById(id);
+    }
+
 }
