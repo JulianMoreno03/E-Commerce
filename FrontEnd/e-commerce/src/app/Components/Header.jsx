@@ -2,7 +2,7 @@ import HeaderOption from "./headerOption";
 
 export default function Header() {
     return (
-        <section className="flex justify-evenly items-center gap-2 w-full h-14">
+        <section className="flex justify-evenly items-center gap-2 w-full h-14 ">
 
             <div className="mr-20" >
                 <a

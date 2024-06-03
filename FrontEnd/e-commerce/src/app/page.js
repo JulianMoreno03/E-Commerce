@@ -1,25 +1,27 @@
-import Image from "next/image";
 import Header from "./Components/Header";
 import AsideBar from "./Components/AsideBar";
 import Main from "./Components/Main";
 
 export default function Home() {
-  return(
-    <main  className="relative h-screen">
+  return (
+    <main className="relative h-screen overflow-y-auto">
 
       <header>
         <Header />
       </header>
-      
-      <section >
-        <Main />
+
+      <section className="grid grid-cols-[200px,1fr] h-full overflow-hidden " >
+         <aside>
+            <AsideBar />
+          </aside>
+
+          <article>
+            <Main />
+          </article>
       </section>
 
-      <aside >
-        <AsideBar />
-      </aside>
 
-      </main>
+    </main>
   );
 }
 
