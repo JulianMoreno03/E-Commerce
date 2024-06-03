@@ -11,11 +11,11 @@ export default function Home() {
         <Header />
       </header>
       
-      <section className=" flex overflow-y-auto bg-green-700">
+      <section >
         <Main />
       </section>
 
-      <aside className="  flex overflow-y-auto bg-blue-700">
+      <aside >
         <AsideBar />
       </aside>
 
