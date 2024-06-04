@@ -4,7 +4,7 @@ import Main from "./Components/Main";
 
 export default function Home() {
   return (
-    <main className="relative h-screen overflow-y-auto">
+    <main className="  overflow-y-auto">
 
       <header>
         <Header />
@@ -15,7 +15,7 @@ export default function Home() {
             <AsideBar />
           </aside>
 
-          <article>
+          <article className="grid w-[80%] h-full justify-center items-center  pt-5">
             <Main />
           </article>
       </section>
