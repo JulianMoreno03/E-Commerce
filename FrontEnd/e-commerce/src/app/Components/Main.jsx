@@ -1,4 +1,5 @@
 import laptopImg from '../img/laptopDesc.png';
+import Image from 'next/image';
 export default function Main() {
     return (
         <section className=" h-full p-1 grid grid-cols-[2fr,1fr] justify-center items-center gap-5">
@@ -17,9 +18,10 @@ export default function Main() {
                         Ver mas</button>
                 </div>
 
-                <figure>
-                    <img src={laptopImg} alt="img de producto en descuento " className=' p-10 w-full' />
+                <figure className= "mt-5">
+                <Image src= {laptopImg} alt="img de producto en descuento " className='  w-full'/>
                 </figure>
+           
             </div>
 
 
@@ -44,9 +46,10 @@ export default function Main() {
                         </button>
                     </div>
 
-                    <figure>
-                        <img src={laptopImg} alt="laptop img" />
-                    </figure>
+                    <figure className= "w-full h-full">
+                     <Image src= {laptopImg}  alt="img de producto en descuento " className=' p-3 w-full h-100px'/>
+                     </figure>
+           
                 </div>
 
             </div>
