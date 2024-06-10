@@ -2,7 +2,7 @@
 import AsideItem from "./AsideItem";
 import { useState, useEffect } from "react";
 //Servicio de api
-import { obtenerCategorias } from "../Services/api";
+import { obtenerCategorias } from "../../Services/api";
 
 
 export default function AsideBar() {
@@ -27,8 +27,8 @@ useEffect(() => {
       <h1 className=" flex items-start font-bold text-2xl">Categorias</h1>
 
       <ul className=" flex flex-col gap-4 w-full">
-        {categorias.map((categoria, index) => (
-          <AsideItem key={index} categoria={categoria.categoria}  />
+        {categorias.map((categoria, index ) => (
+          <AsideItem key={index} categoria={categoria.categoria}  idCategoria={categoria.idCategoria}  />
         ))}
       </ul>
     </div>

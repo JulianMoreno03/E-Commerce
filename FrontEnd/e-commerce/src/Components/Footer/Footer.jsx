@@ -1,7 +1,7 @@
 'use client';
 
 //Servicio de api
-import { obtenerCategorias } from "../Services/api";
+import { obtenerCategorias } from "../../Services/api";
 import { useState, useEffect } from "react";
 import FooterItem from "./FooterItem";
 
@@ -35,7 +35,7 @@ useEffect(() => {
         <article className="grid grid-cols-4 ">  
 
         {categorias.map((categoria, index) => (
-          <FooterItem key={index} url="#" categoria={categoria.categoria} img={categoria.imgUrl} />
+          <FooterItem key={index} categoria={categoria.categoria} img={categoria.imgUrl} idCategoria={categoria.idCategoria} />
         ))}
            
         </article>
