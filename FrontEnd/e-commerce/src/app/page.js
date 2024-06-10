@@ -1,6 +1,6 @@
 import Header from "../Components/Header/Header";
 import AsideBar from "../Components/AsideBar/AsideBar";
-import Main from "./Components/Main";
+import Main from "../Components/Main";
 import Footer from "../Components/Footer/Footer";
 
 export default function Home() {

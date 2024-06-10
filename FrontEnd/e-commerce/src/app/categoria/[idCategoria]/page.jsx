@@ -1,6 +1,9 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { obtenerProductosPorCategoria } from '../../../Services/api';
+import Header from '@/components/Header/Header';
+import AsideFiltro from '@/components/AsideBar/AsideFiltro';
+import MainProducts from '@/components/MainProducts';
 export default function CategoriaPage({params}){
     const { idCategoria } = params;
  
@@ -19,6 +22,21 @@ export default function CategoriaPage({params}){
     }, [idCategoria]);
 
     return (
+        <main>
+            <header>
+            <Header />
+            </header>
+      
+      <section>
+            <aside>
+            <AsideFiltro></AsideFiltro>
+            </aside>
+
+            <article>
+                <MainProducts></MainProducts>
+            </article>
+      </section>
+
         <div>
         <h1 className='text-black'>Productos de la categoría con id: {idCategoria}</h1>
         <ul>
@@ -27,6 +45,7 @@ export default function CategoriaPage({params}){
             ))}
         </ul>
     </div>
+    </main>
     );
 };
 
