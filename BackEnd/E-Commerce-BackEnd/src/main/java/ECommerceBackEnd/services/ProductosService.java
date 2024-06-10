@@ -33,4 +33,5 @@ public class ProductosService {
     public ArrayList<ProductosEntity> listarProductosPorCategoria(int idCategoria) {
         return productoRepository.findByIdCategoria(idCategoria);
     }
+
 }

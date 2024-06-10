@@ -43,9 +43,8 @@ public class CategoriaController {
         }
     }
     // Obtener productos por categoría
-    @GetMapping("/{idCategoria}/productos")
-    public ArrayList<ProductosEntity> obtenerProductosPorCategoria(@PathVariable int idCategoria) {
-        return productosService.listarProductosPorCategoria(idCategoria);
+    @GetMapping("/{IdCategoria}/productos")
+    public ArrayList<ProductosEntity> buscarProductosPorCategoria(@PathVariable Integer IdCategoria) {
+        return productosService.listarProductosPorCategoria(IdCategoria);
     }
-
 }

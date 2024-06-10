@@ -10,5 +10,5 @@ import java.util.ArrayList;
 @Repository
 public interface CategoriaRepository extends CrudRepository<CategoriaEntity, Integer> {
     CategoriaEntity findById(int id);
-
+    CategoriaEntity findByCategoria(String categoria);
 }
