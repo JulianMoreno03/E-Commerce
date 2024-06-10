@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from 'react';
 import { obtenerProductosPorCategoria } from '../../../Services/api';
-import Header from '@/components/Header/Header';
-import AsideFiltro from '@/components/AsideBar/AsideFiltro';
-import MainProducts from '@/components/MainProducts';
+import Header from '../../../Components/Header/Header';
+import AsideFiltro from '../../../Components/AsideBar/AsideFiltro';
+import MainProducts from '../../../Components/MainProducts';
 export default function CategoriaPage({params}){
     const { idCategoria } = params;
  
