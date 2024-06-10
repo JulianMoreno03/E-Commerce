@@ -28,7 +28,7 @@ useEffect(() => {
 
       <ul className=" flex flex-col gap-4 w-full">
         {categorias.map((categoria, index) => (
-          <AsideItem key={index} url="#" categoria={categoria.categoria}  />
+          <AsideItem key={index} categoria={categoria.categoria}  />
         ))}
       </ul>
     </div>

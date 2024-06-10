@@ -1,3 +1,4 @@
+'use client'
 import HeaderOption from "./headerOption";
 
 export default function Header() {
