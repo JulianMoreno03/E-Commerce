@@ -15,6 +15,10 @@ public class CategoriaEntity {
     @Basic
     @Column(name = "categoria", nullable = false)
     private String categoria;
+
+    @Basic
+    @Column(name = "ImgUrl", nullable = false)
+    private String ImgUrl;
     @OneToMany(mappedBy = "categoriaByIdCategoria")
     private Collection<ProductosEntity> productosByIdCategoria;
 
@@ -32,4 +36,15 @@ public class CategoriaEntity {
     public void setCategoria(String categoria) {
         this.categoria = categoria;
     }
+
+
+    public String getImgUrl() {
+        return ImgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        ImgUrl = imgUrl;
+    }
+
 }
+

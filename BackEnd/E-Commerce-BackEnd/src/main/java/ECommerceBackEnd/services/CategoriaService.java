@@ -1,6 +1,7 @@
 package ECommerceBackEnd.services;
 
 import ECommerceBackEnd.entities.CategoriaEntity;
+import ECommerceBackEnd.entities.ProductosEntity;
 import ECommerceBackEnd.respositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,4 @@ public class CategoriaService {
     public CategoriaEntity BuscarCategoriaPorId(int id){
         return categoriaRepository.findById(id);
     }
-
 }

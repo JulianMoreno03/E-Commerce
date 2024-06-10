@@ -22,8 +22,6 @@ public class ProductosEntity {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-
-
     @Basic
     @Column(name = "marca", nullable = false)
     private String marca;

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 
+
 @Service
 public class ProductosService {
     @Autowired
@@ -28,4 +29,8 @@ public class ProductosService {
         return  productoRepository.save(producto);
     }
 
+    // Listar productos por categoría
+    public ArrayList<ProductosEntity> listarProductosPorCategoria(int idCategoria) {
+        return productoRepository.findByIdCategoria(idCategoria);
+    }
 }

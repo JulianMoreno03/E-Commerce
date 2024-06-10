@@ -2,6 +2,7 @@ package ECommerceBackEnd.controllers;
 import ECommerceBackEnd.entities.CategoriaEntity;
 import ECommerceBackEnd.entities.ProductosEntity;
 import ECommerceBackEnd.services.CategoriaService;
+import ECommerceBackEnd.services.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,9 @@ public class CategoriaController {
 
     @Autowired
     CategoriaService categoriaService;
+
+    @Autowired
+    ProductosService productosService;
 
     //LLamando a llamar las funciones desde mi services
     //Funcion para obtener todas las categorias
@@ -37,6 +41,11 @@ public class CategoriaController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+    // Obtener productos por categoría
+    @GetMapping("/{idCategoria}/productos")
+    public ArrayList<ProductosEntity> obtenerProductosPorCategoria(@PathVariable int idCategoria) {
+        return productosService.listarProductosPorCategoria(idCategoria);
     }
 
 }
