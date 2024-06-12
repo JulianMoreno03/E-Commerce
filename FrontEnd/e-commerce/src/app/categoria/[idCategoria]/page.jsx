@@ -5,46 +5,27 @@ import Header from '../../../Components/Header/Header';
 import AsideFiltro from '../../../Components/AsideBar/AsideFiltro';
 import MainProducts from '../../../Components/MainProducts';
 export default function CategoriaPage({params}){
+    //Obtenemos el id de la categoria y lo pasamos como parametro a nuestro component mainProducts
     const { idCategoria } = params;
  
-    const [productos, setProductos] = useState([]);
-
-    useEffect(() => {
-        async function fetchProductos() {
-            try {
-                const data = await obtenerProductosPorCategoria({ idCategoria });
-                setProductos(data); 
-            } catch (error) {
-                console.error('Error al obtener productos:', error);
-            }
-        }
-        fetchProductos();
-    }, [idCategoria]);
-
+   
     return (
         <main>
             <header>
             <Header />
             </header>
       
-      <section>
+      <section  className="grid grid-cols-[200px,1fr] h-full overflow-hidden ">
             <aside>
-            <AsideFiltro></AsideFiltro>
+            <AsideFiltro/>
             </aside>
 
             <article>
-                <MainProducts></MainProducts>
+            <MainProducts idCategoria={idCategoria}/>
             </article>
       </section>
 
-        <div>
-        <h1 className='text-black'>Productos de la categoría con id: {idCategoria}</h1>
-        <ul>
-            {productos.map(producto => (
-                <li key={producto.idProducto}>{producto.producto}</li> 
-            ))}
-        </ul>
-    </div>
+       
     </main>
     );
 };
