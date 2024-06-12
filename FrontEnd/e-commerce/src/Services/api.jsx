@@ -30,3 +30,22 @@ export async function obtenerCategorias() {
       throw error;
     }
   }
+
+
+  export async function obtenerProductoPorId({idProducto}){
+    try{
+      const res = await fetch(`http://localhost:8080/productos/${idProducto}`);
+
+      if (!res.ok) {
+        throw new Error(`Error de datos: ${res.status} ${res.statusText}`);
+      }
+  
+      const data = await res.json();
+      return data;
+    }
+    catch (error) {
+      console.error("Error al obtener producto:", error);
+      throw error;
+    }
+  }
+  

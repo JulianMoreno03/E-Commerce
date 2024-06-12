@@ -34,7 +34,7 @@ export default function AsideFiltro() {
 
                 <form className="flex flex-col gap-5">
 
-                    <span>Marcas</span>
+                    <span className="font-bold text-2xl">Marcas</span>
 
                     <label className="flex items-center space-x-2">
                         <input
