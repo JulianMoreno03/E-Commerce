@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 export default function CardProduct({producto,marca,precio,imgUrl , idProducto}){
     return(
-        <div className="grid grid-cols-[200px,1fr] mt-5 mr-3 justify-center items-center w-[450px] h-[200px]  bg-indigo-600 rounded-lg ">
+        <div className="grid grid-cols-[200px,1fr] mt-5 mr-3 justify-center items-center w-[450px] h-[190px]  bg-indigo-600 rounded-lg ">
            <figure className="p-2 w-full h-full  overflow-auto duration-300 hover:scale-105">
            <Image 
                 src={imgUrl} 
                 className="w-full h-full rounded-lg overflow-auto hover:rounded-md "
                 width={150}
-                height={100}
+                height={150}
             />
            </figure>
             

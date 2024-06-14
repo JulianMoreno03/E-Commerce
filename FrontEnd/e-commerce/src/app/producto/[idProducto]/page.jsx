@@ -18,8 +18,8 @@ export default function Page({params}){
 
         </section>
         
-        <footer>
-          <FooterProducto/>
+        <footer className='flex justify-center items-center w-full h-full mt-10'>
+          <FooterProducto idProducto={idProducto}/>
         </footer>
         </main>
     )

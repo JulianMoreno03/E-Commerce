@@ -48,4 +48,20 @@ export async function obtenerCategorias() {
       throw error;
     }
   }
+
+  export async function obtenerComentariosPorProducto({idProducto}){
+    try{
+      const res = await fetch(`http://localhost:8080/productos/${idProducto}/comentarios`);
+
+      if (!res.ok) {
+        throw new Error(`Error de datos: ${res.status} ${res.statusText}`);
+      }
   
+      const data = await res.json();
+      return data;
+    }
+    catch (error) {
+      console.error("Error al obtener comentario:", error);
+      throw error;
+    }
+  }
