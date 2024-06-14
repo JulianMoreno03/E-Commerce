@@ -2,6 +2,8 @@ package ECommerceBackEnd.entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "productos", schema = "e-commerce")
 public class ProductosEntity {
