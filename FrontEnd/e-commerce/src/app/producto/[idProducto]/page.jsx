@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { obtenerProductoPorId } from '../../../Services/api';
+import Header from '../../../Components/Header/Header';
 
 export default function Page({params}){
     const { idProducto } = params;
@@ -22,6 +23,11 @@ useEffect(() => {
 }, []);
 
     return(
+      <main>
+        <header>
+          <Header></Header>
+        </header>
+    
         <section>
             <h1>id producto :{producto.idProducto} </h1> 
             
@@ -31,5 +37,6 @@ useEffect(() => {
             <h1>precio :{producto.precio} </h1> 
             
         </section>
+        </main>
     )
 }

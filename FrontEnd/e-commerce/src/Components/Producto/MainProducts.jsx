@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react'; 
-import { obtenerProductosPorCategoria } from '../Services/api';
-import Producto from '../Components/producto';
+import { obtenerProductosPorCategoria } from '../../Services/api';
+import Producto from './Producto';
 export default function MainProducts({ idCategoria }) {
 
     const [productos, setProductos] = useState([]);

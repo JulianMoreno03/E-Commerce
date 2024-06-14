@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { obtenerProductosPorCategoria } from '../../../Services/api';
 import Header from '../../../Components/Header/Header';
 import AsideFiltro from '../../../Components/AsideBar/AsideFiltro';
-import MainProducts from '../../../Components/MainProducts';
+import MainProducts from '../../../Components//Producto/MainProducts';
 export default function CategoriaPage({params}){
     //Obtenemos el id de la categoria y lo pasamos como parametro a nuestro component mainProducts
     const { idCategoria } = params;
