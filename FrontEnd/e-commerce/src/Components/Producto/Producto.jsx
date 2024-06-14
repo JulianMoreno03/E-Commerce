@@ -1,27 +1,43 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-export default function Producto({producto,marca,precio,imgUrl , idProducto}){
-    return(
-        <div className="grid grid-cols-[200px,1fr] mt-5 mr-3 justify-center items-center w-[450px] h-[200px]  bg-indigo-600 rounded-lg ">
-           <figure className="p-2 w-full h-full  overflow-auto duration-300 hover:scale-105">
-           <Image 
-                src={imgUrl} 
-                className="w-full h-full rounded-lg overflow-auto hover:rounded-md "
-                width={150}
-                height={100}
-            />
-           </figure>
-            
-            <div className="p-3 gap-2 flex flex-col justify-evenly items-center text-zinc-200 ">
-                <p className="w-3/4">Producto: <span className="font-bold text-white">{producto}</span></p>
-                <p className="w-3/4">Precio: $<span className="font-bold text-white">{precio}</span></p>
-                <p className="w-3/4">Marca: <span className="font-bold text-white">{marca}</span></p>
+import { useEffect, useState } from 'react';
+import { obtenerProductoPorId } from '../../Services/api';
+import Image from 'next/image';
+export default function Producto({ idProducto }) {
+    const [producto, setProducto] = useState([]);
 
-                <Link href={`/producto/${idProducto}`} className="px-6 py-2 mt-2 bg-indigo-900 rounded-lg font-bold hover:bg-indigo-800 hover:border-indigo-700 duration-300">
-                Ver más detalles
-                </Link>
+    useEffect(() => {
+        async function fecthProducto() {
+            try {
+                const producto = await obtenerProductoPorId({ idProducto });
+                setProducto(producto);
+            } catch (error) {
+                console.error("Error al obtener producto:", error);
+            }
+        }
+        fecthProducto();
+    }, []);
+    return (
+        <section className='grid grid-cols-2 justify-center items-center h-1/2'>
+            <div className='w-[400px] bg-indigo-700 flex justify-center items-center rounded-lg'>
+                <Image 
+                src={producto.imgUrl}
+                width={250}
+                height={250} 
+                className='rounded-lg m-4 h-[250px]'>
+                </Image>
             </div>
-        </div>
+            <div className='ml-8 flex flex-col justify-evenly h-full border'>
+                <div className='flex flex-col justify-evenly h-full' >
+                    <p>{producto.producto}</p>
+                    <p>{producto.descripcion}</p>
+                    <p>${producto.precio}</p>
+
+                </div>
+                <div>
+                    <button>Comprar</button>
+                    <button>Favorito</button>
+
+                </div>
+            </div>
+        </section>
     )
 }

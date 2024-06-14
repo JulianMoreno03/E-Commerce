@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from 'react'; 
 import { obtenerProductosPorCategoria } from '../../Services/api';
-import Producto from './Producto';
+import CardProduct from './CardProducto';
 export default function MainProducts({ idCategoria }) {
 
     const [productos, setProductos] = useState([]);
@@ -28,7 +28,7 @@ export default function MainProducts({ idCategoria }) {
                 {/*Hacemos un map que recorrera mi componente producto y le pasara las props segun la
                 cantidad de productos que hay en la api */}
                 {productos.map(producto => (
-                        <Producto 
+                        <CardProduct 
                         key={producto.idProducto}
                         idProducto={producto.idProducto} 
                         producto={producto.producto}
